@@ -12,10 +12,9 @@ function ListGroup(){
     'Paris'
    ]  
 
-   let selectedIndex =0;
-   const arr =useState(-1);
-   arr[0]
-   arr[1]
+const [selectedIndex,setSelectedIndex] =useState(-1);
+//    arr[0]
+//    arr[1]
   
    const handleClick=(event:MouseEvent)=>console.log(event)
 //    items=[];
@@ -36,7 +35,7 @@ function ListGroup(){
           key={item} className={selectedIndex === index 
            ? 'list-group-item active' :'list-group-item'
            }  
-           onClick={()=>{selectedIndex = index ;}}>{item}</li>)}
+           onClick={()=>{setSelectedIndex(index) ;}}>{item}</li>)}
      {/* <li className="list-group-item">An item</li>
      <li className="list-group-item">A second item</li>
      <li className="list-group-item">A third item</li>

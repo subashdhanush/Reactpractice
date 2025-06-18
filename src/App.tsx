@@ -1,10 +1,34 @@
 import Message from './Message';
+import React, { useState } from 'react';
 import ListGroup from './components/ListGroup';
+import Student from './components/Student';
+import Child from './components/Child';
+import Counts from './components/Counts';
 
+const user = {
+  name: "SUBASH",
+  age: 28,
+  hobbies: ["Reading", "Coding", "Gaming"]
+};
 
 function App()
 {
-  return <div><ListGroup/></div>
+  const [count, setCount] = useState(0);
+  const showMessage = (name) => {
+    alert(`Hello,${name}!`);
+  };
+
+   const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  return <div>
+    <ListGroup/>
+    <Student user={user}/>
+    <Child greet={showMessage}/>
+    <h2>Count:{count}</h2>
+    <Counts onIncrement={increaseCount}/>
+  </div>
   // return <div><Message/></div>
 }
 
